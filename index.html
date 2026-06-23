@@ -1,1 +1,458 @@
-index
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Affiliate Experience Report | PartnerStack & Printify</title>
+<meta name="description" content="A documented account of unpaid affiliate commissions, account deletion, and months of no resolution from PartnerStack, AppDirect, and Printify.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: #f5f4f0;
+    color: #1a1a1a;
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
+  /* HERO */
+  .hero {
+    background: #111;
+    color: #fff;
+    padding: 5rem 2rem 4rem;
+    text-align: center;
+  }
+  .hero-eyebrow {
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #E24B4A;
+    margin-bottom: 1.25rem;
+    font-weight: 500;
+  }
+  .hero h1 {
+    font-size: clamp(1.8rem, 4vw, 2.6rem);
+    font-weight: 500;
+    line-height: 1.2;
+    max-width: 680px;
+    margin: 0 auto 1.25rem;
+    color: #fff;
+  }
+  .hero-sub {
+    font-size: 1rem;
+    color: #999;
+    max-width: 540px;
+    margin: 0 auto 3rem;
+    line-height: 1.8;
+  }
+  .hero-stats {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    flex-wrap: wrap;
+    padding-top: 2.5rem;
+    border-top: 1px solid #2a2a2a;
+  }
+  .stat-num {
+    font-size: 2rem;
+    font-weight: 500;
+    color: #fff;
+    display: block;
+  }
+  .stat-label {
+    font-size: 11px;
+    color: #666;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-top: 4px;
+    display: block;
+  }
+
+  /* LAYOUT */
+  .section {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 3.5rem 2rem;
+  }
+  .section-title {
+    font-size: 11px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: #888;
+    margin-bottom: 1.75rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid #e0ded8;
+  }
+  hr.divider {
+    border: none;
+    border-top: 1px solid #e0ded8;
+    margin: 0;
+  }
+
+  /* METRIC CARDS */
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+    gap: 12px;
+  }
+  .card {
+    background: #fff;
+    border: 1px solid #e0ded8;
+    border-radius: 10px;
+    padding: 1.25rem;
+  }
+  .card-label {
+    font-size: 11px;
+    color: #888;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 8px;
+  }
+  .card-value {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #1a1a1a;
+  }
+  .card-value.red { color: #E24B4A; }
+  .card-sub {
+    font-size: 12px;
+    color: #999;
+    margin-top: 5px;
+  }
+
+  /* TIMELINE */
+  .timeline {
+    position: relative;
+    padding-left: 1.75rem;
+  }
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 8px;
+    bottom: 8px;
+    width: 1px;
+    background: #e0ded8;
+  }
+  .tl-item {
+    position: relative;
+    margin-bottom: 2rem;
+  }
+  .tl-item:last-child { margin-bottom: 0; }
+  .tl-item::before {
+    content: '';
+    position: absolute;
+    left: -1.75rem;
+    top: 7px;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #E24B4A;
+    transform: translateX(-3px);
+  }
+  .tl-date {
+    font-size: 11px;
+    color: #999;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 4px;
+  }
+  .tl-text {
+    font-size: 14px;
+    line-height: 1.7;
+    color: #333;
+  }
+  .ticket {
+    display: inline-block;
+    font-size: 11px;
+    background: #f5f4f0;
+    border: 1px solid #e0ded8;
+    border-radius: 4px;
+    padding: 1px 7px;
+    margin-left: 6px;
+    color: #888;
+    font-family: monospace;
+    vertical-align: middle;
+  }
+
+  /* COMPANIES */
+  .company-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1.1rem 0;
+    border-bottom: 1px solid #e0ded8;
+    flex-wrap: wrap;
+  }
+  .company-row:last-child { border-bottom: none; }
+  .company-name {
+    font-weight: 500;
+    font-size: 14px;
+    min-width: 120px;
+  }
+  .company-role {
+    font-size: 13px;
+    color: #555;
+    flex: 1;
+    line-height: 1.6;
+    min-width: 200px;
+  }
+  .badge {
+    display: inline-block;
+    font-size: 11px;
+    padding: 3px 10px;
+    border-radius: 4px;
+    font-weight: 500;
+    white-space: nowrap;
+  }
+  .badge-red { background: #FCEBEB; color: #A32D2D; }
+  .badge-amber { background: #FAEEDA; color: #854F0B; }
+  .badge-gray { background: #f0efea; color: #666; border: 1px solid #e0ded8; }
+
+  /* QUOTES */
+  .quote-block {
+    background: #fff;
+    border-left: 3px solid #E24B4A;
+    border-radius: 0 8px 8px 0;
+    padding: 1.1rem 1.25rem;
+    margin: 1.1rem 0;
+    font-size: 13px;
+    line-height: 1.8;
+    color: #555;
+    font-style: italic;
+  }
+  .quote-source {
+    font-style: normal;
+    font-size: 11px;
+    color: #999;
+    margin-top: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  /* DEMANDS */
+  .demand-list { list-style: none; }
+  .demand-list li {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+    padding: 0.9rem 0;
+    border-bottom: 1px solid #e0ded8;
+    font-size: 14px;
+    line-height: 1.7;
+    color: #333;
+  }
+  .demand-list li:last-child { border-bottom: none; }
+  .demand-num {
+    font-size: 13px;
+    font-weight: 500;
+    color: #E24B4A;
+    min-width: 18px;
+    padding-top: 1px;
+  }
+
+  /* TAGS */
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 0.25rem;
+  }
+
+  /* FOOTER */
+  .footer {
+    background: #111;
+    color: #666;
+    text-align: center;
+    padding: 2.5rem 2rem;
+    font-size: 12px;
+    line-height: 2;
+  }
+
+  @media (max-width: 500px) {
+    .hero-stats { gap: 1.5rem; }
+    .stat-num { font-size: 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-eyebrow">Affiliate Experience Report · Published by Ben P. / Palmarini Services</div>
+  <h1>How PartnerStack left a 10-year affiliate without answers or payment</h1>
+  <p class="hero-sub">A documented account of unpaid commissions, account deletion, and months of being passed between companies with no resolution.</p>
+  <div class="hero-stats">
+    <div>
+      <span class="stat-num">$182,490</span>
+      <span class="stat-label">Sales generated</span>
+    </div>
+    <div>
+      <span class="stat-num">$0</span>
+      <span class="stat-label">Commissions received</span>
+    </div>
+    <div>
+      <span class="stat-num">10 yrs</span>
+      <span class="stat-label">As an affiliate</span>
+    </div>
+    <div>
+      <span class="stat-num">4</span>
+      <span class="stat-label">Tickets ignored</span>
+    </div>
+  </div>
+</div>
+
+<!-- NUMBERS -->
+<div class="section">
+  <p class="section-title">The numbers</p>
+  <div class="cards">
+    <div class="card">
+      <div class="card-label">Printify sales attributed</div>
+      <div class="card-value">$182,490.74</div>
+      <div class="card-sub">All-time via PartnerStack affiliate link</div>
+    </div>
+    <div class="card">
+      <div class="card-label">Recent activity</div>
+      <div class="card-value">$5,154.70</div>
+      <div class="card-sub">Still generating sales while locked out</div>
+    </div>
+    <div class="card">
+      <div class="card-label">Commissions paid</div>
+      <div class="card-value red">Unknown</div>
+      <div class="card-sub">No statement ever provided</div>
+    </div>
+    <div class="card">
+      <div class="card-label">Days locked out</div>
+      <div class="card-value">30+</div>
+      <div class="card-sub">Account email no longer recognized</div>
+    </div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- TIMELINE -->
+<div class="section">
+  <p class="section-title">What happened — timeline</p>
+  <div class="timeline">
+    <div class="tl-item">
+      <div class="tl-date">April 14, 2026</div>
+      <div class="tl-text">First contact to PartnerStack. Flagged two accounts and months of missing commissions on $182,490 in Printify sales. Ticket opened, no resolution provided. <span class="ticket">#113916</span></div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-date">May 4, 2026</div>
+      <div class="tl-text">Followed up with detailed sales data. PartnerStack closed the ticket twice without resolving anything and directed affiliate to contact Printify directly — without providing any contact information.</div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-date">May 26, 2026</div>
+      <div class="tl-text">Account login stopped working. PartnerStack website no longer recognizes the affiliate email address after 10 years of active use. New ticket opened. <span class="ticket">#115604</span></div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-date">June 1, 2026</div>
+      <div class="tl-text">Second report of login failure. Still locked out. No substantive response from PartnerStack.</div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-date">June 15, 2026</div>
+      <div class="tl-text">Third ticket opened. No explanation provided for why account was deactivated or by whose authority. <span class="ticket">#116538</span></div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-date">June 16–22, 2026</div>
+      <div class="tl-text">Contacted AppDirect, which acquired PartnerStack in April 2026. Ticket opened, closed, and reopened multiple times. AppDirect confirmed PartnerStack is "aware" of the situation — but no contact or resolution followed. <span class="ticket">#993876</span></div>
+    </div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- COMPANIES -->
+<div class="section">
+  <p class="section-title">Companies involved</p>
+  <div class="company-row">
+    <div class="company-name">PartnerStack</div>
+    <div class="company-role">Affiliate network platform. Hosted the affiliate program. Closed multiple tickets without resolution. Deactivated account without notice or explanation. Directed affiliate to contact Printify directly.</div>
+    <span class="badge badge-red">No response</span>
+  </div>
+  <div class="company-row">
+    <div class="company-name">AppDirect</div>
+    <div class="company-role">Acquired PartnerStack in April 2026. CEO emailed all affiliates promising "nothing changes." AppDirect support acknowledged the issue but said they lack system access to assist and closed the ticket.</div>
+    <span class="badge badge-amber">Passed back</span>
+  </div>
+  <div class="company-row">
+    <div class="company-name">Printify</div>
+    <div class="company-role">The company whose products generated $182,490 in attributed sales via this affiliate's referrals. Has not responded to any outreach.</div>
+    <span class="badge badge-gray">No reply</span>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- QUOTES -->
+<div class="section">
+  <p class="section-title">In their own words</p>
+
+  <div class="quote-block">
+    "For further assistance regarding your request, please contact Printify directly. They will be able to cross-reference the data that they have internally to calculate the amount you are owed."
+    <div class="quote-source">— PartnerStack Support, May 4, 2026 · Ticket #113916</div>
+  </div>
+
+  <div class="quote-block">
+    "PartnerStack helps companies power their partner program, but each company is responsible for managing their own communications and response times."
+    <div class="quote-source">— PartnerStack Support, May 4, 2026 · closing the ticket</div>
+  </div>
+
+  <div class="quote-block">
+    "PartnerStack is aware of the situation and will reach out to you directly if any further action is needed."
+    <div class="quote-source">— AppDirect Support, June 22, 2026 · Ticket #993876</div>
+  </div>
+
+  <div class="quote-block">
+    "I have some exciting news: PartnerStack has been acquired by AppDirect. For you as a PartnerStack partner, I want to start with the thing that matters most: nothing changes about how you earn."
+    <div class="quote-source">— Bryn Jones, CEO PartnerStack, April 14, 2026 · acquisition announcement email</div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- PROGRAMS -->
+<div class="section">
+  <p class="section-title">Programs promoted — all affected by account loss</p>
+  <div class="tag-list">
+    <span class="badge badge-gray">Printify</span>
+    <span class="badge badge-gray">ManyChat</span>
+    <span class="badge badge-gray">Restream</span>
+    <span class="badge badge-gray">ElevenLabs</span>
+    <span class="badge badge-gray">Jungle Scout</span>
+    <span class="badge badge-gray">QuickBooks (past)</span>
+  </div>
+  <p style="margin-top: 1.25rem; font-size: 13px; color: #777; line-height: 1.8;">All affiliate links and commission tracking for these programs became inaccessible when the account was deactivated. Sales may still be occurring with no commission attribution.</p>
+</div>
+
+<hr class="divider">
+
+<!-- DEMANDS -->
+<div class="section">
+  <p class="section-title">What resolution looks like</p>
+  <ul class="demand-list">
+    <li><span class="demand-num">1</span><span>Restore account access at benitopalmarini@aol.com immediately</span></li>
+    <li><span class="demand-num">2</span><span>Provide a written explanation of why the account was deactivated and by whose authority</span></li>
+    <li><span class="demand-num">3</span><span>Provide a complete commission statement for all programs — what was earned and what was paid</span></li>
+    <li><span class="demand-num">4</span><span>Pay all outstanding commissions owed across Printify and all other programs</span></li>
+    <li><span class="demand-num">5</span><span>Assign a dedicated account manager — not frontline support — to resolve this matter</span></li>
+  </ul>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  <p>This site documents the affiliate experience of Ben P. / Palmarini Services with PartnerStack, AppDirect, and Printify.</p>
+  <p>All quotes are taken directly from official support correspondence. All ticket numbers are on record.</p>
+  <p>This site will remain public until the matter is fully resolved.</p>
+  <p style="margin-top: 1rem; color: #444;">https://brightlane.github.io/affiliatedispleasure/</p>
+</div>
+
+</body>
+</html>
